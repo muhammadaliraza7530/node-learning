@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Details - Contact App</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+  <!-- Top Navbar -->
+  <header class="navbar">
+    <a href="/" class="brand-link">CONTACT APP</a>
+  </header>
+
+  <!-- Main Detail Card Container -->
+  <main class="show-container">
+    <div class="details-card">
+      
+      <!-- Card Header -->
+      <div class="card-header">
+        <h2>Contact Details</h2>
+      </div>
+
+      <!-- Card Body / Information List -->
+      <div class="card-body">
+        <div class="detail-row">
+          <span class="label">First Name</span>
+          <span class="value"><%= typeof contact !== 'undefined' && contact.firstName ? contact.firstName : 'Alfred' %></span>
+        </div>
+
+        <div class="detail-row">
+          <span class="label">Last Name</span>
+          <span class="value"><%= typeof contact !== 'undefined' && contact.lastName ? contact.lastName : 'Kuhlman' %></span>
+        </div>
+
+        <div class="detail-row">
+          <span class="label">Email</span>
+          <span class="value"><%= typeof contact !== 'undefined' && contact.email ? contact.email : 'alfred@test.com' %></span>
+        </div>
+
+        <div class="detail-row">
+          <span class="label">Phone</span>
+          <span class="value"><%= typeof contact !== 'undefined' && (contact.phoneNumber ?? contact.phone) ? (contact.phoneNumber ?? contact.phone) : '+6286767565656' %></span>
+        </div>
+
+        <div class="detail-row">
+          <span class="label">Address</span>
+          <span class="value"><%= typeof contact !== 'undefined' && contact.address ? contact.address : 'Lorem ipsum dolor' %></span>
+        </div>
+      </div>
+
+      <!-- Card Footer / Action Buttons -->
+      <div class="card-footer">
+        <a href="/update-contact" class="btn btn-edit">
+          <i class="fa-solid fa-pen-to-square"></i> Edit
+        </a>
+        <a href="/delete-contact" class="btn btn-delete">
+          <i class="fa-solid fa-trash"></i> Delete
+        </a>
+        <a href="/" class="btn btn-cancel">Cancel</a>
+      </div>
+
+    </div>
+  </main>
+
+</body>
+</html>
